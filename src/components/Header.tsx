@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { brasaoUfmg, formulaUfmgLogoAzul, horse1, horse2, horse3, ufmg, ufmgBranca } from '../assets'
+import { brasaoUfmg, horse3 } from '../assets'
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -40,7 +40,7 @@ export default function Header() {
 	}, [])
 
 	// Opção 1: Fade suave do fundo
-	const opacity = isHome ? Math.min(scrollY / 300, 1) : 1
+	// const opacity = isHome ? Math.min(scrollY / 300, 1) : 1
 	const blur = isHome ? Math.min(scrollY / 300, 1) * 8 : 0
 
 	// Opção 2: Troca de cor baseada no scroll
@@ -97,11 +97,13 @@ export default function Header() {
 
 					{/* Logo UFMG Desktop */}
 					<div className="hidden md:block">
-						<img
-							src={brasaoUfmg}
-							alt="Logo ufmg"
-							className={`transition-all h-14 w-14`}
-						/>
+						<a href="https://ufmg.br/" target='_blank'>
+							<img
+								src={brasaoUfmg}
+								alt="Logo ufmg"
+								className={`transition-all h-14 w-14 cursor-pointer`}
+							/>
+						</a>
 					</div>
 				</div>
 
@@ -119,7 +121,9 @@ export default function Header() {
 							</Link>
 						))}
 						{/* Logo UFMG Centralizada */}
-						<img src={brasaoUfmg} alt="Logo UFMG" className="h-16 w-16 mt-6" />
+						<a href="https://ufmg.br/" target='_blank'>
+							<img src={brasaoUfmg} alt="Logo UFMG" className="h-16 w-16 mt-6 cursor-pointer" />
+						</a>
 					</div>
 				)}
 			</div>
