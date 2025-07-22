@@ -47,15 +47,16 @@ export default function History() {
 		},
 	];
 
+	const screenWidth = window.screen.width;
+
 	return (
 		<div className="mt-12 p-8 flex items-center justify-center flex-col w-full">
-			<div>
-				<h1 className="mb-12 mt-12 text-4xl font-bold tracking-[0.2rem]">Conheça a nossa <span className="text-4xl font-bold tracking-[0.2rem] animate-gradient gradient-text text-transparent">História</span></h1>
-			</div>
+			<h1 className="mb-12 mt-12 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Conheça a nossa <span className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl animate-gradient gradient-text text-transparent">História</span></h1>
+
 			{/* Desktop layout */}
 			<div className="hidden md:block relative max-w-7xl w-full">
 				{/* Linha central */}
-				<div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gray-300 transform -translate-x-1/2 z-0" />
+				<div className="absolute top-0 bottom-0 left-1/2 w-1 bg-bluetheme-100 transform -translate-x-1/2 z-0" />
 				<ul className="space-y-16">
 					{events.map((event, index) => (
 						<li key={index} className="relative flex items-start">
@@ -105,8 +106,8 @@ export default function History() {
 							<div className="absolute -left-10 w-5 h-5 bg-bluetheme-500 rounded-full border-4 border-white z-10 top-1" />
 							<div>
 								<time className="text-sm font-mono text-gray-500">{event.year}</time>
-								<h3 data-aos="fade-left" data-aos-duration={200 * (index + 1)} className="text-lg font-bold text-bluetheme-700">{event.title}</h3>
-								<p data-aos="fade-left" data-aos-duration={200 * (index + 1)} className="mt-1 text-gray-600 text-sm">{event.description}</p>
+								<h3 data-aos={screenWidth < 900 ? "fade-up" : "fade-left"} data-aos-duration={200 * (index + 1)} className="text-lg font-bold text-bluetheme-700">{event.title}</h3>
+								<p data-aos={screenWidth < 900 ? "fade-up" : "fade-left"} data-aos-duration={200 * (index + 1)} className="mt-1 text-gray-600 text-sm">{event.description}</p>
 								{event.img && (
 									<img src={`${event.img}`} alt={event.imgAlt} className="mt-2 max-h-96 rounded-md shadow-2xl shadow-bluetheme-100" />
 								)}

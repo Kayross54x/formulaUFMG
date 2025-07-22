@@ -1,12 +1,15 @@
-import { useEffect, useState, useRef } from 'react'
-import { banner, car1, car2, car3, car4, teamSecondPlace, trophy } from '../assets'
-import { ArrowDownCircleIcon, ChevronDownIcon } from '@heroicons/react/16/solid'
+import { useEffect, useState, useRef } from 'react';
+import { banner, car1, car2, car3, car4, carrobanner, ferro, redbull, teamSecondPlace, trophy, trophy2, video } from '../assets';
+import { ChevronDownIcon } from '@heroicons/react/16/solid';
+import ReactPlayer from 'react-player';
+import { useNavigate } from 'react-router-dom';
 
 const images = [car4, car2, car1, car3, trophy]
 
 export default function Home() {
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const timerRef = useRef<NodeJS.Timeout | null>(null)
+	const navigate = useNavigate();
 
 	const startTimer = () => {
 		if (timerRef.current) clearInterval(timerRef.current)
@@ -64,61 +67,61 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="mt-12 p-8 flex items-center justify-center flex-col w-full">
-				<div className='max-w-7xl w-full'>
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-12'>
+			<div className="flex items-center justify-center flex-col w-full">
+				<div className='w-full flex items-center justify-center flex-col'>
+					<div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 sm:mb-12 max-w-7xl w-full mt-12 p-8 '>
 						<div>
 							<h4 data-aos="fade-in" className="text-4xl font-bold tracking-[0.2rem]">Fórmula UFMG</h4>
-							<p data-aos="fade-up" data-aos-delay="100" className="mt-4 mb-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
+							<p data-aos="fade-up" data-aos-delay="100" className="mt-4 mb-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
 								Somos uma equipe acadêmica da UFMG que projeta e constrói carros de corrida para competir na Fórmula SAE Brasil.
 							</p>
-							<p data-aos="fade-up" data-aos-delay="200" className='text-lg text-gray-700'>
-								A <span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Fórmula UFMG</span>, atualmente nomeada <span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Horeb Energy Fórmula UFMG</span>, é uma equipe multidisciplinar formada por estudantes da UFMG que projeta, fabrica e compete com um carro de corrida tipo Fórmula SAE.
+							<p data-aos="fade-up" data-aos-delay="200" className='text-gray-700 text-base sm:text-lg '>
+								A <span className='text-bluetheme-500 text-base sm:text-lg text-shadow-sm drop-shadow-sm'>Fórmula UFMG</span>, atualmente nomeada <span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Horeb Energy Fórmula UFMG</span>, é uma equipe multidisciplinar formada por estudantes da UFMG que projeta, fabrica e compete com um carro de corrida tipo Fórmula SAE.
 								Participamos anualmente da competição <span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Fórmula SAE Brasil</span>, onde somos avaliados em diversas áreas como engenharia, inovação, gestão e desempenho em pista.
 							</p>
-							<p data-aos="fade-up" data-aos-delay="300" className='text-lg text-gray-700 mt-4'>
-								<span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Missão:</span> Aplicar conhecimentos de engenharia na prática, formando profissionais altamente capacitados e impulsionando a inovação no setor automotivo.
+							<p data-aos="fade-up" data-aos-delay="300" className='sm:text-lg text-base text-gray-700 mt-4'>
+								<span className='text-bluetheme-500 text-base sm:text-lg text-shadow-sm drop-shadow-sm'>Missão:</span> Aplicar conhecimentos de engenharia na prática, formando profissionais altamente capacitados e impulsionando a inovação no setor automotivo.
 							</p>
 						</div>
 
 						<div data-aos="fade-in">
-							<img src={teamSecondPlace} className='rounded-md shadow-2xl shadow-bluetheme-100 ' alt="Imagem do time" />
-							<p className='text-xs text-gray-500 mt-2 text-center'>Equipe Fórmula UFMG - FSAE 2024</p>
+							<img src={teamSecondPlace} className='rounded-md shadow-2xl shadow-bluetheme-100' alt="Imagem do time" />
+							<p className='text-xs text-gray-500 mt-2 text-center'>2º Lugar - Equipe Fórmula UFMG - FSAE 2024</p>
 						</div>
 					</div>
 
-					<div data-aos="fade-in" data-aos-delay="200" >
+					<div data-aos="fade-in" data-aos-delay="200" className='max-w-7xl w-full px-8 '>
 						<h4 id='news' className="text-4xl font-bold tracking-[0.2rem]">Notícias</h4>
 						<p className='text-sm mt-1 mb-1'>Acompanhe algumas das últimas notícias do fórmula.</p>
 
-						<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 mt-6 max-h-[500px] min-h-[400px]'>
+						<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 mt-6 h-full md:max-h-[500px] min-h-[400px]'>
 							<div className="relative group overflow-hidden rounded-md shadow-2xl shadow-bluetheme-100 h-full cursor-pointer">
 								<img
 									src={banner}
 									alt="Imagem do time"
 									className="object-fill w-full h-full transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-70"
 								/>
-								<div className="absolute bottom-4 left-4 right-4 text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
+								<div className="bottom-4 left-4 right-4 text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
 									<h5 className="text-xl font-semibold drop-shadow-md">Rollout do Fórmula</h5>
 									<p className="text-sm mt-1 drop-shadow-sm">Ficamos entre os melhores na FSAE 2024!</p>
 								</div>
 							</div>
 
 							<div className='flex flex-col'>
-								<div className='flex gap-4 mb-6 cursor-pointer'>
-									<img src={trophy} className='h-48 max-w-[600px] rounded-md shadow-2xl shadow-bluetheme-100' alt="Imagem do time" />
+								<div className='block sm:flex gap-4 mb-6 cursor-pointer'>
+									<img src={trophy} className='h-48 w-full sm:max-w-[600px] object-cover rounded-md shadow-2xl shadow-bluetheme-100' alt="Imagem do time" />
 									<div>
-										<p className='text-2xl text-gray-800 font-bold'>2º na FSAE 2024</p>
+										<p className='text-2xl text-gray-800 font-bold mt-4 sm:mt-0'>2ºLugar na FSAE 2024</p>
 										<p className='text-md text-gray-800 line-clamp-custom'>A equipe do fórmula conquistou o segundo lugar (GERAL) na competição Fórmula SAE Brasil</p>
 
 										<p className='text-md text-gray-400 mt-2'>03/08/2025</p>
 									</div>
 								</div>
 
-								<div className='flex gap-4 cursor-pointer'>
-									<img src={car4} className='rounded-md shadow-2xl h-48 max-w-[600px] shadow-bluetheme-100' alt="Imagem do time" />
+								<div className='block sm:flex gap-4 cursor-pointer'>
+									<img src={car4} className='rounded-md shadow-2xl h-48 w-full sm:max-w-[600px] object-cover shadow-bluetheme-100' alt="Imagem do time" />
 									<div>
-										<p className='text-2xl text-gray-800 font-bold'>2º na FSAE 2024</p>
+										<p className='text-2xl text-gray-800 font-bold mt-4 sm:mt-0'>2º Lugar na FSAE 2024</p>
 										<p className='text-md text-gray-800 line-clamp-custom'>A equipe do fórmula conquistou o segundo lugar (GERAL) na competição Fórmula SAE Brasil</p>
 
 										<p className='text-md text-gray-400 mt-2'>03/08/2025</p>
@@ -128,23 +131,33 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className='mt-28 mb-16'>
-						<h4 className="text-4xl font-bold tracking-[0.2rem] text-center animate-gradient gradient-text text-transparent">Por que o automobilismo é o que nos move</h4>
-						<p className='text-4xl text-center mt-12'>Colocar um video aqui</p>
-						<p className='text-xl text-center mt-12 text-bluetheme-700'>Nos conheça um pouco melhor</p>
-
-						<div className='flex w-full items-center justify-center gap-6 mt-8'>
-							<div data-aos="fade-up" data-aos-delay="100" className='max-w-[150px] w-full'>
-								<button className='transition-all py-4 px-8  w-full border-2 border-bluetheme-500 bg-bluetheme-500 hover:bg-bluetheme-700 text-white rounded-lg'>
-									Loja
-								</button>
-							</div>
-							<div data-aos="fade-up" data-aos-delay="200" className='max-w-[150px] w-full'>
-								<button className='transition-all py-4 px-8 border-2 w-full hover:bg-gray-100 rounded-lg'>
-									História
-								</button>
-							</div>
+					<div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mt-0 sm:mt-12 w-full '>
+						<div className='w-full h-[300px] sm:h-[600px]'>
+							<img className='w-full h-full object-cover' src={trophy2} />
 						</div>
+						<div className='w-full h-[300px] sm:h-[600px]'>
+							<img className='w-full h-full object-cover' src={carrobanner} />
+						</div>
+						<div className='w-full h-[300px] sm:h-[600px]'>
+							<img className='w-full h-full object-cover' src={redbull} />
+						</div>
+						<div className='w-full h-[300px] sm:h-[600px]'>
+							<img className='w-full h-full object-cover' src={ferro} />
+						</div>
+					</div>
+
+					<div className='mb-6 sm:mb-16 max-w-7xl w-full mt-4 sm:mt-12 p-8 '>
+						<h4 className="text-3xl sm:text-4xl font-bold tracking-[0.2rem] text-center animate-gradient gradient-text text-transparent mb-12">Por que o automobilismo é o que nos move</h4>
+
+						<ReactPlayer
+							src={video}
+							width='100%'
+							height='100%'
+							playing
+							muted
+							className='rounded-xl shadow-2xl shadow-bluetheme-200 border-2 border-bluetheme-400 neonborder'
+							controls
+						/>
 					</div>
 				</div>
 			</div>

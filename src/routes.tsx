@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { History, Home, Sponsors } from './pages';
+import { Contact, History, Home, Sponsors, Team } from './pages';
 import MainLayout from './components/MainLayout';
 import { useEffect } from 'react';
 
@@ -22,6 +22,8 @@ export default function Router() {
 					<Route index element={<Home />} />
 					<Route path='history' element={<History />} />
 					<Route path='sponsors' element={<Sponsors />} />
+					<Route path='team' element={<Team />} />
+					<Route path='contact' element={<Contact />} />
 					{/* <Route path="about" element={<About />} />
 					<Route path="*" element={<NotFound />} /> */}
 				</Route>
