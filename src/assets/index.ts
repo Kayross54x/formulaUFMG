@@ -30,6 +30,11 @@ import carrobanner from "./carropicadelado.jpg";
 import redbull from "./redbull.jpg";
 import trophy2 from "./trophy2.jpg";
 import ferro from "./ferro.jpg";
+import insta from "./insta.webp";
+import zap from "./zap.png";
+import tiktok from "./tiktok.webp";
+import linkedin from "./linkedin.webp";
+import youtube from "./youtube.png";
 
 export {
 	formulaUfmgLogoAzul,
@@ -63,5 +68,10 @@ export {
 	carrobanner,
 	trophy2,
 	redbull,
-	ferro
+	ferro,
+	insta,
+	zap,
+	tiktok,
+	linkedin,
+	youtube
 }

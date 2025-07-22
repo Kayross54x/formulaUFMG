@@ -69,17 +69,17 @@ export default function Home() {
 
 			<div className="flex items-center justify-center flex-col w-full">
 				<div className='w-full flex items-center justify-center flex-col'>
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 sm:mb-12 max-w-7xl w-full mt-12 p-8 '>
+					<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-4 sm:mb-12 max-w-7xl w-full mt-12 p-8 '>
 						<div>
 							<h4 data-aos="fade-in" className="text-4xl font-bold tracking-[0.2rem]">Fórmula UFMG</h4>
 							<p data-aos="fade-up" data-aos-delay="100" className="mt-4 mb-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
 								Somos uma equipe acadêmica da UFMG que projeta e constrói carros de corrida para competir na Fórmula SAE Brasil.
 							</p>
-							<p data-aos="fade-up" data-aos-delay="200" className='text-gray-700 text-base sm:text-lg '>
+							<p data-aos="fade-up" data-aos-delay="200" className='text-gray-700 text-base sm:text-lg text-justify'>
 								A <span className='text-bluetheme-500 text-base sm:text-lg text-shadow-sm drop-shadow-sm'>Fórmula UFMG</span>, atualmente nomeada <span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Horeb Energy Fórmula UFMG</span>, é uma equipe multidisciplinar formada por estudantes da UFMG que projeta, fabrica e compete com um carro de corrida tipo Fórmula SAE.
 								Participamos anualmente da competição <span className='text-bluetheme-500 text-shadow-sm drop-shadow-sm'>Fórmula SAE Brasil</span>, onde somos avaliados em diversas áreas como engenharia, inovação, gestão e desempenho em pista.
 							</p>
-							<p data-aos="fade-up" data-aos-delay="300" className='sm:text-lg text-base text-gray-700 mt-4'>
+							<p data-aos="fade-up" data-aos-delay="300" className='sm:text-lg text-base text-gray-700 mt-4 text-justify'>
 								<span className='text-bluetheme-500 text-base sm:text-lg text-shadow-sm drop-shadow-sm'>Missão:</span> Aplicar conhecimentos de engenharia na prática, formando profissionais altamente capacitados e impulsionando a inovação no setor automotivo.
 							</p>
 						</div>

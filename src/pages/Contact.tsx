@@ -1,5 +1,5 @@
 import React from 'react'
-import { carrobanner, souza, trophy, trophy2 } from '../assets'
+import { carrobanner, insta, souza, trophy, trophy2, zap } from '../assets'
 
 export default function Contact() {
 	return (
@@ -19,11 +19,12 @@ export default function Contact() {
 
 								<div className="mt-4 mb-4 flex gap-4">
 									<a
-										href="https://wa.me/SEUNUMEROAQUI"
+										href="https://wa.me/+5516991590459"
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center gap-2 rounded-md bg-green-500 px-6 py-3 text-white text-base font-semibold hover:bg-green-600 transition duration-300"
 									>
+										<img src={zap} className='h-5 w-5' alt="whatsapp logo"/>
 										WhatsApp
 									</a>
 
@@ -33,9 +34,7 @@ export default function Contact() {
 										rel="noopener noreferrer"
 										className="flex items-center text-base gap-2 rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2 text-white font-semibold hover:opacity-90 transition duration-300"
 									>
-										<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-											<path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0120.5 7.75v8.5a4.25 4.25 0 01-4.25 4.25h-8.5A4.25 4.25 0 013.5 16.25v-8.5A4.25 4.25 0 017.75 3.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm5.25-.88a.88.88 0 100 1.76.88.88 0 000-1.76z" />
-										</svg>
+										<img src={insta} className='h-5 w-5' alt="instagram logo"/>
 										Instagram
 									</a>
 								</div>
@@ -154,8 +153,10 @@ export default function Contact() {
 
 					<div className="lg:absolute lg:inset-0 lg:left-1/2">
 						<img
-							alt=""
+							alt="Banner do TRX novo carro do formula ufmg"
 							src={carrobanner}
+							data-aos="fade-in"
+							data-aos-delay="100"
 							className="h-64 rounded-xl w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full shadow-2xl shadow-bluetheme-200"
 						/>
 					</div>
