@@ -31,7 +31,7 @@ export default function Footer() {
 	]
 	return (
 		<footer className="neonborder bg-bluetheme-800 flex flex-col items-center justify-center">
-			<div className="mt-16 w-full border-t border-b pb-8 border-gray-700 flex items-center justify-center">
+			<div className="w-full border-t border-b pb-8 border-gray-700 flex items-center justify-center">
 				<div className="w-full max-w-7xl  pt-8 lg:flex lg:items-center lg:justify-between px-6 lg:px-8">
 					<div>
 						<h3 className="text-sm/6 font-semibold text-gray-100">Se inscreva em nossa NewsLetter</h3>
