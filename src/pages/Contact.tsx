@@ -1,5 +1,4 @@
-import React from 'react'
-import { carrobanner, insta, souza, trophy, trophy2, zap } from '../assets'
+import { carrobanner, insta, zap } from '../assets'
 
 export default function Contact() {
 	return (

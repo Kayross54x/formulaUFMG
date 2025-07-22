@@ -2,14 +2,12 @@ import { useEffect, useState, useRef } from 'react';
 import { banner, car1, car2, car3, car4, carrobanner, ferro, redbull, teamSecondPlace, trophy, trophy2, video } from '../assets';
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
 
 const images = [car4, car2, car1, car3, trophy]
 
 export default function Home() {
 	const [currentIndex, setCurrentIndex] = useState(0)
-	const timerRef = useRef<NodeJS.Timeout | null>(null)
-	const navigate = useNavigate();
+	const timerRef = useRef<number | null>(null)
 
 	const startTimer = () => {
 		if (timerRef.current) clearInterval(timerRef.current)
