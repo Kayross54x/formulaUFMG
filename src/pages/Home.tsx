@@ -2,12 +2,35 @@ import { useEffect, useState, useRef } from 'react';
 import { banner, car1, car2, car3, car4, carrobanner, ferro, redbull, teamSecondPlace, trophy, trophy2, video } from '../assets';
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
 import ReactPlayer from 'react-player';
+import NewsSection from '../components/NewsSection';
 
 const images = [car4, car2, car1, car3, trophy]
 
 export default function Home() {
-	const [currentIndex, setCurrentIndex] = useState(0)
-	const timerRef = useRef<number | null>(null)
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const timerRef = useRef<number | null>(null);
+
+	const news = {
+		highlight: {
+			img: banner,
+			title: 'Rollout do Fórmula',
+			description: 'Ficamos entre os melhores na FSAE 2024!'
+		},
+		secondaries: [
+			{
+				img: trophy,
+				title: '2º Lugar na FSAE 2024',
+				description: 'A equipe do fórmula conquistou o segundo lugar (GERAL) na competição Fórmula SAE Brasil',
+				data: '03/08/2025'
+			},
+			{
+				img: car4,
+				title: '2º Lugar na FSAE 2024',
+				description: 'A equipe do fórmula conquistou o segundo lugar (GERAL) na competição Fórmula SAE Brasil',
+				data: '03/08/2025'
+			}
+		]
+	}
 
 	const startTimer = () => {
 		if (timerRef.current) clearInterval(timerRef.current)
@@ -92,41 +115,10 @@ export default function Home() {
 						<h4 id='news' className="text-4xl font-bold tracking-[0.2rem]">Notícias</h4>
 						<p className='text-sm mt-1 mb-1'>Acompanhe algumas das últimas notícias do fórmula.</p>
 
-						<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 mt-6 h-full md:max-h-[500px] min-h-[400px]'>
-							<div className="relative group overflow-hidden rounded-md shadow-2xl shadow-bluetheme-100 h-full cursor-pointer">
-								<img
-									src={banner}
-									alt="Imagem do time"
-									className="object-fill w-full h-full transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-70"
-								/>
-								<div className="bottom-4 left-4 right-4 text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-									<h5 className="text-xl font-semibold drop-shadow-md">Rollout do Fórmula</h5>
-									<p className="text-sm mt-1 drop-shadow-sm">Ficamos entre os melhores na FSAE 2024!</p>
-								</div>
-							</div>
-
-							<div className='flex flex-col'>
-								<div className='block sm:flex gap-4 mb-6 cursor-pointer'>
-									<img src={trophy} className='h-48 w-full sm:max-w-[600px] object-cover rounded-md shadow-2xl shadow-bluetheme-100' alt="Imagem do time" />
-									<div>
-										<p className='text-2xl text-gray-800 font-bold mt-4 sm:mt-0'>2ºLugar na FSAE 2024</p>
-										<p className='text-md text-gray-800 line-clamp-custom'>A equipe do fórmula conquistou o segundo lugar (GERAL) na competição Fórmula SAE Brasil</p>
-
-										<p className='text-md text-gray-400 mt-2'>03/08/2025</p>
-									</div>
-								</div>
-
-								<div className='block sm:flex gap-4 cursor-pointer'>
-									<img src={car4} className='rounded-md shadow-2xl h-48 w-full sm:max-w-[600px] object-cover shadow-bluetheme-100' alt="Imagem do time" />
-									<div>
-										<p className='text-2xl text-gray-800 font-bold mt-4 sm:mt-0'>2º Lugar na FSAE 2024</p>
-										<p className='text-md text-gray-800 line-clamp-custom'>A equipe do fórmula conquistou o segundo lugar (GERAL) na competição Fórmula SAE Brasil</p>
-
-										<p className='text-md text-gray-400 mt-2'>03/08/2025</p>
-									</div>
-								</div>
-							</div>
-						</div>
+						<NewsSection 
+							highlight={news.highlight}
+							secondaries={news.secondaries}
+						/>
 					</div>
 
 					<div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mt-0 sm:mt-12 w-full '>

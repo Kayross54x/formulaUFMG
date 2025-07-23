@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { carrobanner, insta, zap } from '../assets'
 
 export default function Contact() {
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' }) // ou 'auto' se preferir instantâneo
+	}, [])
+
 	return (
 		<div className="mt-12 p-8 flex items-center justify-center flex-col w-full">
 			<div className='max-w-7xl w-full'>
@@ -16,14 +21,14 @@ export default function Contact() {
 									Por meio das nossas redes sociais:
 								</p>
 
-								<div className="mt-4 mb-4 flex gap-4">
+								<div className="mt-4 mb-4 block sm:flex gap-4">
 									<a
 										href="https://wa.me/+5516991590459"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex items-center gap-2 rounded-md bg-green-500 px-6 py-3 text-white text-base font-semibold hover:bg-green-600 transition duration-300"
+										className="flex items-center gap-2 rounded-md justify-center sm:justify-normal bg-green-500 px-6 py-3 text-white text-base font-semibold hover:bg-green-600 transition duration-300"
 									>
-										<img src={zap} className='h-5 w-5' alt="whatsapp logo"/>
+										<img src={zap} className='h-5 w-5' alt="whatsapp logo" />
 										WhatsApp
 									</a>
 
@@ -31,9 +36,9 @@ export default function Contact() {
 										href="https://www.instagram.com/formulaufmg/"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex items-center text-base gap-2 rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2 text-white font-semibold hover:opacity-90 transition duration-300"
+										className="flex items-center px-6 py-3 mt-3 sm:mt-0 justify-center sm:justify-normal text-base gap-2 rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 sm:px-4 sm:py-2 text-white font-semibold hover:opacity-90 transition duration-300"
 									>
-										<img src={insta} className='h-5 w-5' alt="instagram logo"/>
+										<img src={insta} className='h-5 w-5' alt="instagram logo" />
 										Instagram
 									</a>
 								</div>

@@ -49,7 +49,7 @@ export default function Team() {
 		<div className="mt-12 p-8 flex items-center justify-center flex-col w-full">
 			<div className='max-w-7xl w-full'>
 				<div className="bg-white mt-12">
-					<div className="mx-auto max-w-7xl grid-cols-1 gap-20 px-6 lg:px-8">
+					<div className="mx-auto max-w-7xl grid-cols-1 gap-20 px-0 lg:px-8">
 						<div className="mx-auto lg:mx-0">
 							<h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl text-center">Nossa Equipe</h2>
 							<div className='w-full flex items-center justify-center flex-col'>
