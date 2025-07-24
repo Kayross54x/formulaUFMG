@@ -115,7 +115,7 @@ export default function Home() {
 						<h4 id='news' className="text-4xl font-bold tracking-[0.2rem]">Notícias</h4>
 						<p className='text-sm mt-1 mb-1'>Acompanhe algumas das últimas notícias do fórmula.</p>
 
-						<NewsSection 
+						<NewsSection
 							highlight={news.highlight}
 							secondaries={news.secondaries}
 						/>
@@ -136,7 +136,33 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className='mb-6 sm:mb-16 max-w-7xl w-full mt-4 sm:mt-12 p-8 '>
+					{/* Estatísticas - seção nova */}
+					<div className="w-full bg-white dark:bg-gray-900 pt-16 sm:pb-16 px-8">
+						<div className="max-w-7xl mx-auto">
+							<h4 className="text-3xl sm:text-4xl font-bold tracking-[0.2rem] text-center mb-12" data-aos="fade-up">
+								Nossos números
+							</h4>
+
+							<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+								<div data-aos="fade-up" data-aos-delay="100" className="shadow-bluetheme-200 dark:bg-bluetheme-900 text-bluetheme-900 dark:text-white p-6 rounded-lg shadow-md border border-bluetheme-200 dark:border-bluetheme-800">
+									<p className="text-5xl font-bold mb-2">2º</p>
+									<p className="text-lg font-medium">Lugar Geral na FSAE 2024</p>
+								</div>
+
+								<div data-aos="fade-up" data-aos-delay="200" className="shadow-bluetheme-200 dark:bg-bluetheme-900 text-bluetheme-900 dark:text-white p-6 rounded-lg shadow-md border border-bluetheme-200 dark:border-bluetheme-800">
+									<p className="text-5xl font-bold mb-2">15+</p>
+									<p className="text-lg font-medium">Anos de História</p>
+								</div>
+
+								<div data-aos="fade-up" data-aos-delay="300" className="shadow-bluetheme-200 dark:bg-bluetheme-900 text-bluetheme-900 dark:text-white p-6 rounded-lg shadow-md border border-bluetheme-200 dark:border-bluetheme-800">
+									<p className="text-5xl font-bold mb-2">50+</p>
+									<p className="text-lg font-medium">Membros Ativos</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className='mb-6 sm:mb-16 max-w-7xl w-full mt-4 sm:mt-0 p-8 '>
 						<h4 className="text-3xl sm:text-4xl font-bold tracking-[0.2rem] text-center animate-gradient gradient-text text-transparent mb-12">Por que o automobilismo é o que nos move</h4>
 
 						<ReactPlayer
