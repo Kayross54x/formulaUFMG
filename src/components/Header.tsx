@@ -51,7 +51,7 @@ export default function Header() {
 	return (
 		<header className={`${border ? "neonborder" : ""} fixed w-full z-50 text-white duration-200 transition-all ${switchToSolidColor ? "h-16" : "h-24"}`}>
 			<div
-				className={`w-full h-full transition-all duration-500 ease-in-out bg-bluetheme-800 flex items-center justify-center `}
+				className={`w-full h-full transition-all duration-500 ease-in-out bg-bluetheme-800 block sm:flex items-center justify-center `}
 				style={{
 					backdropFilter: `blur(${blur}px)`,
 					backgroundColor: switchToSolidColor

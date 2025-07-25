@@ -92,7 +92,7 @@ export default function Home() {
 				<div className='w-full flex items-center justify-center flex-col'>
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-4 sm:mb-12 max-w-7xl w-full mt-12 p-8 '>
 						<div>
-							<h4 data-aos="fade-in" className="text-4xl font-bold tracking-[0.2rem]">Fórmula UFMG</h4>
+							<h4 data-aos="fade-in" className="text-3xl font-bold tracking-[0.2rem]">Horeb Energy Fórmula UFMG</h4>
 							<p data-aos="fade-up" data-aos-delay="100" className="mt-4 mb-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
 								Somos uma equipe acadêmica da UFMG que projeta e constrói carros de corrida para competir na Fórmula SAE Brasil.
 							</p>
@@ -112,7 +112,7 @@ export default function Home() {
 					</div>
 
 					<div data-aos="fade-in" data-aos-delay="200" className='max-w-7xl w-full px-8 '>
-						<h4 id='news' className="text-4xl font-bold tracking-[0.2rem]">Notícias</h4>
+						<h4 id='news' className="text-3xl font-bold tracking-[0.2rem]">Notícias</h4>
 						<p className='text-sm mt-1 mb-1'>Acompanhe algumas das últimas notícias do fórmula.</p>
 
 						<NewsSection
