@@ -57,6 +57,7 @@ export default function Home() {
 
 	return (
 		<div>
+			<div className="absolute inset-0 bg-gradient-to-b z-40 from-black/70 via-black/60 to-black/70" />
 			<div className="relative w-full min-h-screen bg-bluetheme-500">
 				{images.map((img, index) => (
 					<div
@@ -66,8 +67,7 @@ export default function Home() {
 						style={{ backgroundImage: `url(${img})` }}
 					/>
 				))}
-				<div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 items-center">
-
+				<div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 items-center ">
 					<div onClick={redirectToDiv} data-aos="fade-up" data-aos-delay="300" className='flex flex-col items-center justify-center mb-10 cursor-pointer'>
 						<p className='text-xs text-white uppercase flex items-center tracking-[0.2em] mb-3'>Descubra</p>
 						<ChevronDownIcon className='h-6 w-6 text-white animate-bounce' />
