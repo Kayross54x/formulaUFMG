@@ -24,7 +24,7 @@ export default function Footer() {
 		},
 		{
 			name: 'WhatsApp',
-			href: 'https://wa.me/+5516991590459',
+			href: 'https://wa.me/+553189442303',
 			icon: zap,
 		}
 

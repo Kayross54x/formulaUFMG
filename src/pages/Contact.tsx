@@ -23,7 +23,7 @@ export default function Contact() {
 
 								<div className="mt-4 mb-4 block sm:flex gap-4">
 									<a
-										href="https://wa.me/+5516991590459"
+										href="https://wa.me/+553189442303"
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center gap-2 rounded-md justify-center sm:justify-normal bg-green-500 px-6 py-3 text-white text-base font-semibold hover:bg-green-600 transition duration-300"

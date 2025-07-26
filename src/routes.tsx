@@ -3,8 +3,8 @@ import { Contact, History, Home, Sponsors, Team } from './pages';
 import MainLayout from './components/MainLayout';
 import { useEffect } from 'react';
 
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Router() {
 	useEffect(() => {
