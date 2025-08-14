@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Contact, History, Home, Sponsors, Team } from './pages';
+import { Contact, History, Home, Sponsors, Store, Team } from './pages';
 import MainLayout from './components/MainLayout';
 import { useEffect } from 'react';
 
@@ -24,6 +24,7 @@ export default function Router() {
 					<Route path='sponsors' element={<Sponsors />} />
 					<Route path='team' element={<Team />} />
 					<Route path='contact' element={<Contact />} />
+					<Route path='store' element={<Store />} />
 					{/* <Route path="about" element={<About />} />
 					<Route path="*" element={<NotFound />} /> */}
 				</Route>

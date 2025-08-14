@@ -57,7 +57,7 @@ export default function Home() {
 
 	return (
 		<div>
-			<div className="absolute inset-0 bg-gradient-to-b z-40 from-black/70 via-black/60 to-black/70" />
+			<div className="absolute inset-0 bg-gradient-to-b z-40 from-black/70 via-black/60 to-black/70" />
 			<div className="relative w-full min-h-screen bg-bluetheme-500">
 				{images.map((img, index) => (
 					<div
@@ -139,25 +139,35 @@ export default function Home() {
 					{/* Estatísticas - seção nova */}
 					<div className="w-full bg-white dark:bg-gray-900 pt-16 sm:pb-16 px-8">
 						<div className="max-w-7xl mx-auto">
-							<h4 className="text-3xl sm:text-4xl font-bold tracking-[0.2rem] text-center mb-12" data-aos="fade-up">
+							<h4
+								className="text-3xl sm:text-4xl font-bold tracking-[0.2rem] text-center mb-12"
+								data-aos="fade-up"
+							>
 								Nossos números
 							</h4>
 
-							<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-								<div data-aos="fade-up" data-aos-delay="100" className="shadow-bluetheme-200 dark:bg-bluetheme-900 text-bluetheme-900 dark:text-white p-6 rounded-lg shadow-md border border-bluetheme-200 dark:border-bluetheme-800">
-									<p className="text-5xl font-bold mb-2">2º</p>
-									<p className="text-lg font-medium">Lugar Geral na FSAE 2024</p>
-								</div>
+							<div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+								{[
+									{ value: "2º", label: "Lugar Geral na FSAE 2024" },
+									{ value: "15+", label: "Anos de História" },
+									{ value: "50+", label: "Membros Ativos" },
+								].map((stat, i) => (
+									<div
+										key={i}
+										data-aos="fade-up"
+										data-aos-delay={100 * (i + 1)}
+										className="group relative p-8 rounded-2xl bg-gradient-to-b from-bluetheme-500/90 to-bluetheme-700/90 
+						dark:from-bluetheme-800 dark:to-bluetheme-900 
+						text-white shadow-lg hover:shadow-2xl border border-white/10 
+						hover:scale-105 transition-all duration-300 overflow-hidden"
+									>
+										{/* Glow effect */}
+										<div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-white transition-opacity duration-300"></div>
 
-								<div data-aos="fade-up" data-aos-delay="200" className="shadow-bluetheme-200 dark:bg-bluetheme-900 text-bluetheme-900 dark:text-white p-6 rounded-lg shadow-md border border-bluetheme-200 dark:border-bluetheme-800">
-									<p className="text-5xl font-bold mb-2">15+</p>
-									<p className="text-lg font-medium">Anos de História</p>
-								</div>
-
-								<div data-aos="fade-up" data-aos-delay="300" className="shadow-bluetheme-200 dark:bg-bluetheme-900 text-bluetheme-900 dark:text-white p-6 rounded-lg shadow-md border border-bluetheme-200 dark:border-bluetheme-800">
-									<p className="text-5xl font-bold mb-2">50+</p>
-									<p className="text-lg font-medium">Membros Ativos</p>
-								</div>
+										<p className="text-6xl font-extrabold drop-shadow-lg">{stat.value}</p>
+										<p className="mt-3 text-lg font-medium tracking-wide">{stat.label}</p>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
