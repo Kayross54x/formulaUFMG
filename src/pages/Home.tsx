@@ -3,11 +3,21 @@ import { banner, car1, car2, car3, car4, carrobanner, ferro, fundo1, redbull, te
 import ReactPlayer from 'react-player';
 import NewsSection from '../components/NewsSection';
 import ImageCarousel from '../components/ImageCarousel';
+import CarsSection from '../components/CarsSection';
+import CompetitionSection from '../components/CompetitionSection';
 
 const images = [fundo1, car4, car2, car1, car3, trophy]
 
 export default function Home() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const titleRef = useRef<HTMLHeadingElement>(null);
+	const [titleWidth, setTitleWidth] = useState(0);
+	useEffect(() => {
+		if (titleRef.current) {
+			setTitleWidth(titleRef.current.offsetWidth);
+		}
+	}, [titleRef.current]);
+	
 	const timerRef = useRef<number | null>(null);
 
 	const news = {
@@ -46,15 +56,27 @@ export default function Home() {
 		}
 	}, [])
 
-	const handleManualSelect = (index: number) => {
-		setCurrentIndex(index)
-		startTimer()
-	}
-
 	return (
 		<div>
 			<div className="absolute inset-0 bg-gradient-to-b z-40 from-black/70 via-black/60 to-black/70" />
-			<ImageCarousel images={images} interval={6000} height="min-h-[800px]" />
+			<ImageCarousel images={images} interval={6000} height="min-h-[800px]">
+				{/* Texto centralizado */}
+				<div className="absolute inset-0 flex flex-col justify-end pb-24 z-40 max-w-[1400px] mx-auto px-4 lg:text-left text-center">
+					<h1 ref={titleRef} className="text-3xl md:text-4xl w-fit font-bold text-white drop-shadow-lg italic">
+						A FÓRMULA DO FUTURO COMEÇA AQUI
+					</h1>
+					<div className="mt-2 sm:flex items-center justify-center lg:justify-start gap-4" style={{ width: `${titleWidth}px` }}>
+						<p className="text-xl md:text-2xl text-white drop-shadow-md italic min-w-fit">HOREB ENERGY FÓRMULA UFMG</p>
+						<div className="sm:mt-0 mt-4 h-[5px] bg-[#0D00FF] w-full relative overflow-hidden -skew-x-12">
+							<div className="h-full w-full bg-[#0D00FF] origin-top-left transform" />
+						</div>
+					</div>
+				</div>
+			</ImageCarousel>
+
+			<CarsSection />
+
+			<CompetitionSection />
 
 			<div className="flex items-center justify-center flex-col w-full">
 				<div className='w-full flex items-center justify-center flex-col'>

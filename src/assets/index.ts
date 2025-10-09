@@ -34,6 +34,7 @@ import youtube from "./youtube.png";
 
 import fundo1 from "./fundo1.svg";
 import logo1 from "./logo1.svg";
+import logoAzul from "./logoazul.png";
 
 export {
 	formulaUfmgLogoAzul,
@@ -70,5 +71,6 @@ export {
 	linkedin,
 	youtube,
 	fundo1,
-	logo1
+	logo1,
+	logoAzul
 }
