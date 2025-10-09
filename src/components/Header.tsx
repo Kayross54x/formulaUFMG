@@ -1,132 +1,163 @@
-import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { brasaoUfmg, horse3 } from '../assets'
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { logo1 } from "../assets";
+
+function NavItem({ name, url }: { name: string; url: string }) {
+	return (
+		<Link to={url} className="uppercase tracking-[0.1em] italic text-[16px] hover:text-shadow-glow transition duration-300">
+			{name}
+		</Link>
+	);
+}
 
 export default function Header() {
-	const [isOpen, setIsOpen] = useState(false)
-	const [scrollY, setScrollY] = useState(0)
+	const [isOpen, setIsOpen] = useState(false);
+	const [scrollY, setScrollY] = useState(0);
 	const [isHome, setIsHome] = useState(false);
-
-	const routes = [
-		{ name: 'Home', url: "/" },
-		{ name: 'História', url: "/history" },
-		{ name: 'Parceiros', url: "/sponsors" },
-		{ name: 'Equipe', url: "/team" },
-		{ name: 'Loja', url: "store" },
-		{ name: 'Contato', url: "/contact" }
-	]
-
 	const location = useLocation();
 
-	const handleScroll = () => {
-		setScrollY(window.scrollY)
-	}
+	const handleScroll = () => setScrollY(window.scrollY);
 
 	useEffect(() => {
-		setIsHome(location.pathname === '/')
-	}, [location.pathname])
+		setIsHome(location.pathname === "/");
+	}, [location.pathname]);
 
 	useEffect(() => {
 		if (isHome) {
-			window.addEventListener('scroll', handleScroll)
-			return () => window.removeEventListener('scroll', handleScroll)
+			window.addEventListener("scroll", handleScroll);
+			return () => window.removeEventListener("scroll", handleScroll);
 		}
-	}, [isHome])
+	}, [isHome]);
 
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
-	}, [])
+	const switchToSolidColor = isHome ? scrollY > 700 : true;
+	const border = !isHome ? true : switchToSolidColor;
 
-	// Opção 1: Fade suave do fundo
-	// const opacity = isHome ? Math.min(scrollY / 300, 1) : 1
-	const blur = isHome ? Math.min(scrollY / 300, 1) * 8 : 0
+	const routesLeft = [
+		{ name: "HOME", url: "/" },
+		{ name: "COMPETIÇÃO", url: "/competition" },
+		{ name: "HISTÓRIA", url: "/history" },
+		{ name: "EQUIPE", url: "/team" },
+	];
 
-	// Opção 2: Troca de cor baseada no scroll
-	const switchToSolidColor = isHome ? scrollY > 700 : true
-
-	const border = !isHome ? true : switchToSolidColor
+	const routesRight = [
+		{ name: "PARCEIROS", url: "/sponsors" },
+		{ name: "HOREB", url: "/horeb" },
+		{ name: "LOJA", url: "/store" },
+	];
 
 	return (
-		<header className={`${border ? "neonborder" : ""} fixed w-full z-50 text-white duration-200 transition-all ${switchToSolidColor ? "h-16" : "h-24"}`}>
+		<header
+			className={`${border ? "neonborder" : ""} fixed w-full z-50 text-white transition-all duration-200 ${switchToSolidColor ? "mt-0" : "mt-[50px]"}`}
+		>
 			<div
-				className={`w-full h-full transition-all duration-500 ease-in-out bg-bluetheme-800 block sm:flex items-center justify-center `}
+				className="w-full h-full bg-bluetheme-800 xl:flex xl:items-center xl:justify-center transition-all duration-500"
 				style={{
-					backdropFilter: `blur(${blur}px)`,
-					backgroundColor: switchToSolidColor
-						? ''
-						: isOpen ? '' : 'transparent',
+					backgroundColor: switchToSolidColor ? "rgba(0, 0, 0, 0.85)" : "transparent",
 				}}
 			>
-				<div className="flex items-center justify-between p-4 h-full max-w-7xl w-full">
-					{/* Logo Cavalo */}
-					<Link to="/" className="flex-shrink-0">
-						<img
-							src={horse3}
-							className="h-12 w-12 hover:-rotate-12 hover:scale-110 transition-transform duration-300"
-						/>
-					</Link>
-
-					{/* Desktop Menu */}
-					<nav className="hidden md:flex gap-8 items-center">
-						{routes.map((item, idx) => (
-							<Link
-								key={idx}
-								to={item.url}
-								className="text-xs uppercase tracking-[0.2em] hover:text-shadow-glow transition duration-300"
-							>
-								{item.name}
-							</Link>
+				{/* DESKTOP */}
+				<div className="hidden xl:flex items-center justify-between p-4 h-full w-full max-w-[1400px]">
+					<nav className="flex w-full items-center justify-between">
+						{routesLeft.map((item, idx) => (
+							<NavItem key={idx} name={item.name} url={item.url} />
 						))}
-					</nav>
 
-					{/* Mobile Menu Button */}
+						{/* Logo central */}
+						<Link to="/" className="hidden md:flex flex-shrink-0 mx-4">
+							<img src={logo1} alt="Logo" className="h-12 duration-300" />
+						</Link>
+
+						{routesRight.map((item, idx) => (
+							<NavItem key={idx} name={item.name} url={item.url} />
+						))}
+
+						<Link
+							to="/sponsor"
+							className="px-4 py-2 bg-[#0D00FF] font-bold text-white uppercase tracking-[0.1em] italic text-[16px] hover:brightness-110 transition"
+						>
+							PATROCINE
+						</Link>
+					</nav>
+				</div>
+
+				{/* MOBILE */}
+				<div className="flex xl:hidden items-center justify-between w-full px-4 py-3 relative z-50">
+					{/* Botão do menu */}
 					<button
 						onClick={() => setIsOpen(!isOpen)}
-						className="md:hidden focus:outline-none"
+						className="focus:outline-none relative z-[60]" // agora acima do backdrop, mas abaixo do conteúdo animado
 					>
-						<svg className="w-6 h-6" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
-							{isOpen ? (
+						<svg className="w-7 h-7" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
+							{/* {isOpen ? (
 								<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
 							) : (
 								<path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-							)}
+							)} */}
+							<path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+							
 						</svg>
 					</button>
 
-					{/* Logo UFMG Desktop */}
-					<div className="hidden md:block">
-						<a href="https://ufmg.br/" target='_blank'>
-							<img
-								src={brasaoUfmg}
-								alt="Logo ufmg"
-								className={`transition-all h-14 w-14 cursor-pointer`}
-							/>
-						</a>
-					</div>
+					{/* Logo central */}
+					<Link to="/" className="absolute left-1/2 -translate-x-1/2">
+						<img src={logo1} alt="Logo" className="h-12 w-auto" />
+					</Link>
 				</div>
 
-				{/* Mobile Menu Overlay */}
-				{isOpen && (
-					<div className="md:hidden px-4 pt-4 pb-8 bg-bluetheme-900 text-white flex flex-col items-center gap-4">
-						{routes.map((item, idx) => (
-							<Link
-								key={idx}
-								to={item.url}
-								className="text-sm uppercase tracking-[0.2em] hover:text-shadow-glow transition duration-300"
+				{/* MENU SLIDE MOBILE (animado com Framer Motion) */}
+				<AnimatePresence>
+					{isOpen && (
+						<>
+							{/* Backdrop com fade */}
+							<motion.div
+								className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								transition={{ duration: 0.3 }}
 								onClick={() => setIsOpen(false)}
+							/>
+
+							{/* Menu lateral animado */}
+							<motion.div
+								className="fixed top-0 left-0 h-full w-[75%] max-w-[300px] bg-bluetheme-900 text-white z-50 p-6 flex flex-col justify-start gap-6"
+								initial={{ x: "-100%", opacity: 0 }}
+								animate={{ x: 0, opacity: 1 }}
+								exit={{ x: "-100%", opacity: 0 }}
+								transition={{ type: "tween", duration: 0.4 }}
 							>
-								{item.name}
-							</Link>
-						))}
-						{/* Logo UFMG Centralizada */}
-						<a href="https://ufmg.br/" target='_blank'>
-							<img src={brasaoUfmg} alt="Logo UFMG" className="h-16 w-16 mt-6 cursor-pointer" />
-						</a>
-					</div>
-				)}
+								{/* Botão de fechar dentro do menu */}
+								<button onClick={() => setIsOpen(false)} className="self-end mb-4 focus:outline-none">
+									<svg className="w-7 h-7" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
+										<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+									</svg>
+								</button>
+
+								{/* Links do menu */}
+								{[...routesLeft, ...routesRight].map((item, idx) => (
+									<Link
+										key={idx}
+										to={item.url}
+										className="text-lg uppercase tracking-[0.15em] hover:text-shadow-glow transition duration-300"
+										onClick={() => setIsOpen(false)}
+									>
+										{item.name}
+									</Link>
+								))}
+
+								<Link
+									to="/sponsor"
+									className="px-4 text-center py-2 bg-[#0D00FF] text-white text-sm uppercase tracking-[0.2em] rounded mt-2 hover:brightness-110 transition"
+									onClick={() => setIsOpen(false)}
+								>
+									PATROCINE
+								</Link>
+							</motion.div>
+						</>
+					)}
+				</AnimatePresence>
 			</div>
 		</header>
-	)
+	);
 }

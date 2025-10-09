@@ -6,10 +6,6 @@ import car4 from "./car4.jpg";
 import banner from "./banner.png";
 import teamSecondPlace from "./team.jpg";
 import trophy from "./trophy.jpg";
-import horse1 from "./horse1.png";
-import horse2 from "./horse2.png";
-import horse3 from "./horse3.png";
-import horse4 from "./horse4.png";
 import ufmg from "./ufmg.png";
 import ufmgBranca from "./ufmgBranca.png";
 import brasaoUfmg from "./brasaoUfmg.png";
@@ -36,6 +32,9 @@ import tiktok from "./tiktok.webp";
 import linkedin from "./linkedin.webp";
 import youtube from "./youtube.png";
 
+import fundo1 from "./fundo1.svg";
+import logo1 from "./logo1.svg";
+
 export {
 	formulaUfmgLogoAzul,
 	banner,
@@ -45,10 +44,6 @@ export {
 	car4,
 	teamSecondPlace,
 	trophy,
-	horse1,
-	horse2,
-	horse3,
-	horse4,
 	ufmg,
 	ufmgBranca,
 	brasaoUfmg,
@@ -73,5 +68,7 @@ export {
 	zap,
 	tiktok,
 	linkedin,
-	youtube
+	youtube,
+	fundo1,
+	logo1
 }

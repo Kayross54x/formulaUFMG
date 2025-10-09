@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
-import { banner, car1, car2, car3, car4, carrobanner, ferro, redbull, teamSecondPlace, trophy, trophy2, video } from '../assets';
-import { ChevronDownIcon } from '@heroicons/react/16/solid';
+import { banner, car1, car2, car3, car4, carrobanner, ferro, fundo1, redbull, teamSecondPlace, trophy, trophy2, video } from '../assets';
 import ReactPlayer from 'react-player';
 import NewsSection from '../components/NewsSection';
+import ImageCarousel from '../components/ImageCarousel';
 
-const images = [car4, car2, car1, car3, trophy]
+const images = [fundo1, car4, car2, car1, car3, trophy]
 
 export default function Home() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,42 +51,10 @@ export default function Home() {
 		startTimer()
 	}
 
-	function redirectToDiv() {
-		document.getElementById("scroll")?.scrollIntoView({ behavior: 'smooth' })
-	}
-
 	return (
 		<div>
 			<div className="absolute inset-0 bg-gradient-to-b z-40 from-black/70 via-black/60 to-black/70" />
-			<div className="relative w-full min-h-screen bg-bluetheme-500">
-				{images.map((img, index) => (
-					<div
-						key={index}
-						className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'
-							}`}
-						style={{ backgroundImage: `url(${img})` }}
-					/>
-				))}
-				<div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 items-center ">
-					<div onClick={redirectToDiv} data-aos="fade-up" data-aos-delay="300" className='flex flex-col items-center justify-center mb-10 cursor-pointer'>
-						<p className='text-xs text-white uppercase flex items-center tracking-[0.2em] mb-3'>Descubra</p>
-						<ChevronDownIcon className='h-6 w-6 text-white animate-bounce' />
-						{/* <ArrowDownCircleIcon className='h-6 w-6 text-white animate-bounce'/> */}
-					</div>
-
-					<div className='flex gap-3 items-center justify-center' id="scroll">
-						{images.map((_, index) => (
-							<button
-								key={index}
-								onClick={() => handleManualSelect(index)}
-								className={`rounded-full border hover:bg-bluetheme-500 transition-all duration-400 ${currentIndex === index ? 'w-3 h-3 border-bluetheme-500 bg-bluetheme-500 scale-125' : 'bg-white/30 border-white/30 w-2 h-2'
-									}`}
-							/>
-						))}
-					</div>
-
-				</div>
-			</div>
+			<ImageCarousel images={images} interval={6000} height="min-h-[800px]" />
 
 			<div className="flex items-center justify-center flex-col w-full">
 				<div className='w-full flex items-center justify-center flex-col'>
