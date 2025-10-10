@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { arrowR } from "../assets";
 
 interface ImageCarouselProps {
 	images: string[];
@@ -18,6 +19,14 @@ export default function ImageCarousel({
 }: React.PropsWithChildren<ImageCarouselProps>) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const timerRef = useRef<number | null>(null);
+
+	const prevSlide = () => {
+		setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+	};
+
+	const nextSlide = () => {
+		setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+	};
 
 	const startTimer = () => {
 		if (timerRef.current) clearInterval(timerRef.current);
@@ -52,6 +61,22 @@ export default function ImageCarousel({
 			))}
 
 			{children}
+
+			{/* Botão esquerdo */}
+			<button
+				onClick={prevSlide}
+				className="hidden sm:absolute cursor-pointer z-40 left-20 top-1/2 -translate-y-1/2 text-white p-2 rounded-full transition"
+			>
+				<img alt="seta para esquerda" src={arrowR} className="h-8 rotate-180" />
+			</button>
+
+			{/* Botão direito */}
+			<button
+				onClick={nextSlide}
+				className="hidden sm:absolute cursor-pointer z-40 right-20 top-1/2 -translate-y-1/2 text-white p-2 rounded-full transition"
+			>
+				<img alt="seta para direita" src={arrowR} className="h-8" />
+			</button>
 
 			{/* Indicadores / botões de navegação */}
 			{showIndicators && (

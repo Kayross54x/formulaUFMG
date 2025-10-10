@@ -9,8 +9,8 @@ const images = [car4, car2, car1, car3];
 function CarStats({ type, value }: { type: string; value: string }) {
 	return (
 		<div className="p-2 text-white">
-			<h3 className="text-md">{type}</h3>
-			<p className="text-5xl font-bold">{value}</p>
+			<h3 className="text-sm md:text-md">{type}</h3>
+			<p className="text-3xl md:text-5xl font-bold">{value}</p>
 		</div>
 	);
 }

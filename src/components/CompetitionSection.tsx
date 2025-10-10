@@ -10,7 +10,7 @@ export default function CompetitionSection() {
 		<div className="flex-col w-full bg-[#121212] min-h-[600px]">
 			<SectionCommonHeader text="Fórmula SAE Brasil" />
 
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 items-center justify-between w-full max-w-[1400px] mx-auto px-4 pt-4 mt-4 text-white">
+			<div className="grid pb-12 md:pb-0 grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 items-center justify-between w-full max-w-[1400px] mx-auto px-4 pt-4 mt-4 text-white">
 				<div className="mb-8 sm:mb-0 max-w-lg" data-aos="fade-in" data-aos-delay="200">
 					<p className="mb-4">
 						A Fórmula SAE Brasil é a <b>maior competição estudantil de engenharia automobilística do país</b>.
