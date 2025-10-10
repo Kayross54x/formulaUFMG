@@ -72,12 +72,11 @@ export default function Header() {
 							<NavItem key={idx} name={item.name} url={item.url} />
 						))}
 
-						<Link
-							to="/sponsor"
-							className="px-4 py-2 bg-[#0D00FF] font-bold text-white uppercase tracking-[0.1em] italic text-[16px] hover:brightness-110 transition"
+						<button
+							className="px-4 py-2 bg-[#0D00FF] font-bold text-white uppercase tracking-[0.1em] italic text-[16px] hover:brightness-110 transition duration-500 hover:-skew-x-12"
 						>
-							PATROCINE
-						</Link>
+							<p className="skew-x-12">PATROCINE</p>
+						</button>
 					</nav>
 				</div>
 
@@ -146,13 +145,12 @@ export default function Header() {
 									</Link>
 								))}
 
-								<Link
-									to="/sponsor"
-									className="px-4 text-center py-2 bg-[#0D00FF] text-white text-sm uppercase tracking-[0.2em] rounded mt-2 hover:brightness-110 transition"
+								<button
+									className="px-4 text-center py-2 bg-[#0D00FF] text-white text-sm uppercase tracking-[0.2em] rounded mt-2 hover:brightness-110 transition hover:-skew-x-12"
 									onClick={() => setIsOpen(false)}
 								>
 									PATROCINE
-								</Link>
+								</button>
 							</motion.div>
 						</>
 					)}
