@@ -28,16 +28,35 @@ import trophy2 from "./trophy2.jpg";
 import ferro from "./ferro.jpg";
 import insta from "./insta.webp";
 import zap from "./zap.png";
-import tiktok from "./tiktok.webp";
 import linkedin from "./linkedin.webp";
-import youtube from "./youtube.png";
 
 import fundo1 from "./fundo1.svg";
-import logo1 from "./logo1.svg";
+import logo1 from "./logo1.png";
 import logoAzul from "./logoazul.png";
 import arrowL from "./arrowL.png";
 import arrowR from "./arrowR.png";
 import capacete from "./capacete.png";
+import trx from "./trx.png";
+import trx2 from "./trx2.png";
+import TrxSvg from "./trx.svg";
+import tr9 from "./tr9.png";
+import homeSecondSlide from "./homeSecondSlide.png";
+import homeThirdSlide from "./homeThirdSlide.png";
+import logoSoFormula from "./logoSoFormula.png";
+import horebyWhite from "./horebyWhite.png";
+import ced from "./ced.png";
+import escolaEngUFMG from "./escolaEngUFMG.png";
+import ctm from "./ctm.png";
+import lrss from "./lrss.png";
+import ufmgwhite from "./ufmgwhite.png";
+import logo1svg from "./logo1.svg";
+import onlyLogoSvg from "./onlyLogo.svg";
+import horebywhiteSvg from "./horebywhite.svg";
+import mail from "./mail.svg";
+import phone from "./phone.svg";
+import tiktok from "./tiktok.svg";
+import youtube from "./youtube.svg";
+import podcast from "./podcast.svg";
 
 export {
 	formulaUfmgLogoAzul,
@@ -70,13 +89,32 @@ export {
 	ferro,
 	insta,
 	zap,
-	tiktok,
 	linkedin,
-	youtube,
 	fundo1,
 	logo1,
 	logoAzul,
 	arrowL,
 	arrowR,
 	capacete,
+	trx,
+	TrxSvg,
+	tr9,
+	homeSecondSlide,
+	homeThirdSlide,
+	trx2,
+	logoSoFormula,
+	horebyWhite,
+	ced,
+	escolaEngUFMG,
+	ctm,
+	lrss,
+	ufmgwhite,
+	logo1svg,
+	onlyLogoSvg,
+	horebywhiteSvg,
+	mail,
+	phone,
+	tiktok,
+	youtube,
+	podcast,
 }

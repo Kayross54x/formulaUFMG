@@ -32,3 +32,8 @@ O site tem como objetivos principais:
 - **[TypeScript](https://www.typescriptlang.org/)** – Superset do JavaScript com tipagem estática
 - **[Tailwind CSS](https://tailwindcss.com/)** – Framework utilitário para estilização rápida e moderna
 - **[Vite](https://vitejs.dev/)** – Ferramenta de build e desenvolvimento ultrarrápida
+
+
+todo:
+
+adicionar data-aos nas coisas da home

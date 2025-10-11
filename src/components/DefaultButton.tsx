@@ -7,7 +7,7 @@ export default function DefaultButton(props: { text?: string; onClick?: () => vo
 			onClick={props.onClick}
 			className={`relative overflow-hidden px-5 text-center py-2 -skew-x-12 text-white text-md font-bold transition-all duration-300 bg-[#0D00FF] ${animation}`}
 		>
-			<p className="skew-x-12 relative z-10">{props?.text}</p>
+			<p className="skew-x-12 relative z-10 text-sm md:text-base">{props?.text}</p>
 			{props.children}
 		</button>
 	);

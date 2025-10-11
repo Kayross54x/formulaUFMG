@@ -1,10 +1,10 @@
 import SectionCommonHeader from "./SectionCommonHeader";
-import { capacete, car1, car2, car3, car4 } from "../assets";
+import { capacete, car1, car2, car3, trx2 } from "../assets";
 import DefaultButton from "./DefaultButton";
 import ImageSlider from "./ImageSlider";
 
 export default function CompetitionSection() {
-	const images = [capacete, car4, car2, car1, car3];
+	const images = [capacete, trx2, car2, car1, car3];
 
 	return (
 		<div className="flex-col w-full bg-[#121212] min-h-[600px]">

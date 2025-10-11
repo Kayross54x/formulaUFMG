@@ -52,11 +52,17 @@ export default function ImageSlider({ images }: ImageSliderProps) {
 	return (
 		<div className="relative w-full h-[350px] sm:h-[450px] md:h-[400px] flex items-center justify-center rounded-md mt-4 mb-12 sm:mb-0">
 			{/* Imagem atual */}
-			<img
-				src={images[currentIndex]}
-				alt={`slide-${currentIndex}`}
-				className="w-full h-full object-cover transition-all max-w-xl duration-700 ease-in-out rounded-md"
-			/>
+
+			{images.map((img, index) => (
+				<img
+					key={index}
+					src={img}
+					alt={`slide-${index}`}
+					className={`absolute w-full h-full object-cover max-w-xl transition-opacity duration-1000 ease-in-out rounded-md ${
+						index === currentIndex ? "opacity-100" : "opacity-0"
+					}`}
+				/>
+			))}
 
 			{/* Botão com contagem regressiva */}
 			<div className="absolute top-0 right-10 -translate-y-1/2">
@@ -65,10 +71,8 @@ export default function ImageSlider({ images }: ImageSliderProps) {
 					<div className="flex items-end justify-center gap-2 px-3">
 						{/* Números */}
 						<div className="flex gap-2 text-white text-2xl font-bold tracking-wider skew-x-12">
-							<span>{formatNumber(timeLeft.days)}</span>:
-							<span>{formatNumber(timeLeft.hours)}</span>:
-							<span>{formatNumber(timeLeft.minutes)}</span>:
-							<span>{formatNumber(timeLeft.seconds)}</span>
+							<span>{formatNumber(timeLeft.days)}</span>:<span>{formatNumber(timeLeft.hours)}</span>:<span>{formatNumber(timeLeft.minutes)}</span>
+							:<span>{formatNumber(timeLeft.seconds)}</span>
 						</div>
 					</div>
 					{/* Legendas */}
@@ -82,30 +86,19 @@ export default function ImageSlider({ images }: ImageSliderProps) {
 			</div>
 
 			{/* Botão esquerdo */}
-			<button
-				onClick={prevSlide}
-				className="absolute -left-4 top-1/2 -translate-y-1/2 text-white p-2 rounded-full transition"
-			>
+			<button onClick={prevSlide} className="absolute -left-4 top-1/2 -translate-y-1/2 text-white p-2 rounded-full transition">
 				<img alt="seta para esquerda" src={arrowR} className="h-8 rotate-180" />
 			</button>
 
 			{/* Botão direito */}
-			<button
-				onClick={nextSlide}
-				className="absolute -right-4 top-1/2 -translate-y-1/2 text-white p-2 rounded-full transition"
-			>
+			<button onClick={nextSlide} className="absolute -right-4 top-1/2 -translate-y-1/2 text-white p-2 rounded-full transition">
 				<img alt="seta para direita" src={arrowR} className="h-8" />
 			</button>
 
 			{/* Indicadores inferiores */}
 			<div className="absolute bottom-3 flex gap-2">
 				{images.map((_, index) => (
-					<div
-						key={index}
-						className={`w-2.5 h-2.5 rounded-full transition-all ${
-							index === currentIndex ? "bg-white scale-125" : "bg-white/40"
-						}`}
-					/>
+					<div key={index} className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex ? "bg-white scale-125" : "bg-white/40"}`} />
 				))}
 			</div>
 		</div>

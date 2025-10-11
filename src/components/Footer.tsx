@@ -1,82 +1,91 @@
-import { insta, linkedin, tiktok, youtube, zap } from "../assets"
+import { insta, linkedin, tiktok, youtube, onlyLogoSvg, ced, escolaEngUFMG, ctm, lrss, ufmgwhite, horebywhiteSvg, mail, phone } from "../assets";
 
 export default function Footer() {
 	const navigation = [
 		{
-			name: 'TikTok',
-			href: 'https://www.tiktok.com/@formula.ufmg',
-			icon: tiktok,
-		},
-		{
-			name: 'Instagram',
-			href: 'https://www.instagram.com/formulaufmg/',
+			name: "Instagram",
+			href: "https://www.instagram.com/formulaufmg/",
 			icon: insta,
 		},
 		{
-			name: 'Linkedin',
-			href: 'https://www.linkedin.com/company/f%C3%B3rmulaufmg/',
-			icon: linkedin
+			name: "LinkedIn",
+			href: "https://www.linkedin.com/company/f%C3%B3rmulaufmg/",
+			icon: linkedin,
 		},
 		{
-			name: 'Youtube',
-			href: 'https://www.youtube.com/channel/UCG13U5V92XVoqfVdqQRoEgA',
+			name: "TikTok",
+			href: "https://www.tiktok.com/@formula.ufmg",
+			icon: tiktok,
+		},
+		{
+			name: "YouTube",
+			href: "https://www.youtube.com/channel/UCG13U5V92XVoqfVdqQRoEgA",
 			icon: youtube,
 		},
-		{
-			name: 'WhatsApp',
-			href: 'https://wa.me/+553189442303',
-			icon: zap,
-		}
+	];
 
-	]
 	return (
-		<footer className="neonborder bg-bluetheme-800 flex flex-col items-center justify-center">
-			<div className="w-full border-t border-b pb-8 border-gray-700 flex items-center justify-center">
-				<div className="w-full max-w-7xl  pt-8 lg:flex lg:items-center lg:justify-between px-6 lg:px-8">
-					<div>
-						<h3 className="text-sm/6 font-semibold text-gray-100">Se inscreva em nossa NewsLetter</h3>
-						<p className="mt-2 text-sm/6 text-gray-200">
-							Fique por dentro das últimas notícias do Horeb Energy Fórmula UFMG
-						</p>
+		<footer className="bg-[#0D00FF] text-white py-10 px-6 flex flex-col items-center justify-center">
+			<div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 gap-8 items-center justify-between">
+				{/* Coluna esquerda */}
+				<div className="flex flex-col items-start gap-4">
+					{/* Logos principais */}
+					<div className="flex items-center gap-3">
+						<img src={onlyLogoSvg} alt="Fórmula UFMG" className="h-9" />
+						<div className="h-14 w-[1px] bg-white -skew-x-12 mx-2" />
+						<img src={horebywhiteSvg} onClick={() => window.open("https://horebenergybrasil.com/", "_blank")} alt="Horeb Energy" className="cursor-pointer h-5" />
 					</div>
-					<form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
-						<label htmlFor="email-address" className="sr-only">
-							Email address
-						</label>
-						<input
-							id="email-address"
-							name="email-address"
-							type="email"
-							required
-							placeholder="Insira o Email"
-							autoComplete="email"
-							className="w-full min-w-0 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus-visible:outline-indigo-600 sm:w-56 sm:text-sm/6"
-						/>
-						<div className="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
-							<button
-								type="submit"
-								className="flex w-full items-center justify-center rounded-lg hover:bg-gray-100 bg-white border px-3 py-2 text-sm  transition-all shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-							>
-								Inscrever
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
 
-			<div className="mx-auto w-full max-w-7xl pb-12 md:flex md:items-center md:justify-between px-6 lg:px-8 mt-0 sm:mt-8 pt-8">
-				<div className="flex justify-center gap-x-6 md:order-2">
-					{navigation.map((item) => (
-						<a key={item.name} href={item.href} target="_blank" className="text-gray-600 hover:text-gray-800">
-							<span className="sr-only">{item.name}</span>
-							<img src={item.icon} aria-hidden="true" className="h-6 w-6" />
-						</a>
-					))}
+					{/* Contato */}
+					<div className="flex flex-col text-sm gap-y-4 mt-4">
+						<div className="flex items-center gap-x-5">
+							<img src={phone} alt="Telefone" className="h-7" />
+							<span>(31) 98944-2303</span>
+						</div>
+						<div className="flex items-center gap-x-5">
+							<img src={mail} alt="Email" className="h-7" />
+							<span>formulaufmg@gmail.com</span>
+						</div>
+					</div>
+
+					{/* Redes sociais */}
+					<div className="flex gap-x-4 mt-4">
+						{navigation.map((item) => (
+							<a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer">
+								<img src={item.icon} alt={item.name} className="h-5 hover:scale-110 transition-transform" />
+							</a>
+						))}
+					</div>
 				</div>
-				<p className="mt-8 text-center text-sm/6 text-gray-100 md:order-1 md:mt-0">
-					&copy; 2025 Horeb Energy Fórmula UFMG. Todos os direitos reservados.
-				</p>
+
+				{/* Coluna direita */}
+				<div className="flex flex-col items-end sm:items-end">
+					{/* Logos institucionais */}
+					<div className="grid grid-cols-3 grid-rows-2 justify-end gap-x-4 items-center">
+						<div className="flex items-center justify-end cursor-pointer hover:scale-105 transition-all" onClick={() => window.open("https://lrss.demec.ufmg.br/", "_blank")}>
+							<img src={lrss} alt="LRSS" className="h-18" />
+						</div>
+						<div className="flex items-center justify-end cursor-pointer hover:scale-105 transition-all" onClick={() => window.open("https://www.eng.ufmg.br/portal/", "_blank")}>
+							<img src={escolaEngUFMG} alt="Escola de Engenharia" className="h-9" />
+						</div>
+						<div className="flex items-center justify-end cursor-pointer hover:scale-105 transition-all" onClick={() => window.open("https://www.ufmg.br/", "_blank")}>
+							<img src={ufmgwhite} alt="UFMG" className="h-8" />
+						</div>
+						<div></div>
+						<div className="flex items-center justify-end cursor-pointer hover:scale-105 transition-all" onClick={() => window.open("https://www.ufmg.br/", "_blank")}>
+							<img src={ced} alt="CEF" className="h-4" />
+						</div>
+						<div className="flex items-center justify-end cursor-pointer hover:scale-105 transition-all" onClick={() => window.open("https://ctm.demec.ufmg.br/", "_blank")}>
+							<img src={ctm} alt="CTM" className="h-8" />
+						</div>
+					</div>
+
+					{/* Copyright */}
+					<p className="text-[10px] sm:text-xs text-right opacity-80 text-white">
+						© Copyright Horeb Energy Fórmula UFMG – 2025. Todos os direitos reservados.
+					</p>
+				</div>
 			</div>
 		</footer>
-	)
+	);
 }

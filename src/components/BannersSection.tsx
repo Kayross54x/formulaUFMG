@@ -20,7 +20,8 @@ export default function BannersSection() {
 					>
 						<img
 							src={img}
-							className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+							onClick={() => window.open("https://www.instagram.com/formulaufmg/", "_blank")}
+							className="cursor-pointer w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
 						/>
 					</div>
 				))}

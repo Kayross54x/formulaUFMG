@@ -30,7 +30,7 @@ export default function Header() {
 		}
 	}, [isHome]);
 
-	const switchToSolidColor = isHome ? scrollY > 550 : true;
+	const switchToSolidColor = isHome ? scrollY > 50 : true;
 	const border = !isHome ? true : switchToSolidColor;
 
 	const routesLeft = [
