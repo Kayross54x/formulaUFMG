@@ -30,7 +30,7 @@ import zap from "./zap.png";
 import linkedin from "./linkedin.webp";
 
 import fundo1 from "./fundo1.svg";
-import logo1 from "./logo1.png";
+import logo1 from "./logo1.svg";
 import logoAzul from "./logoazul.png";
 import arrowL from "./arrowL.png";
 import arrowR from "./arrowR.png";
