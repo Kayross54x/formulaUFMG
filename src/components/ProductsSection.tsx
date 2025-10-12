@@ -14,7 +14,7 @@ export default function ProductsSection() {
 
 				<div className="grid grid-cols-5 gap-6">
 					{/* ESQUERDA - Imagens principais */}
-					<div className="col-span-5 lg:col-span-4 flex gap-6">
+					<div className="col-span-5 lg:col-span-4 flex gap-6" data-aos="fade-up" data-aos-delay="200">
 						{/* Miniaturas */}
 						<div className="hidden sm:flex flex-col gap-6">
 							<img src={cinza} alt="Miniatura 1" className="cursor-pointer w-20 h-20 object-cover bg-[#444]" />
@@ -49,7 +49,7 @@ export default function ProductsSection() {
 							{ nome: "Ferradura", preco: 35 },
 							{ nome: "Sela dourada", preco: 65 },
 						].map((item, i) => (
-							<div key={i} className="flex">
+							<div key={i} className="flex" data-aos="fade-up" data-aos-delay={`${200 + i * 200}`}>
 								{/* Imagem mini */}
 								<img src={cinza} alt={item.nome} className="w-24 h-full object-cover bg-[#444]" />
 

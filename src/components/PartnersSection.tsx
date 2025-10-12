@@ -14,8 +14,8 @@ export default function PartnersSection() {
 			<SectionCommonHeader text="SÓCIOS" extraText="CONFIRA NOSSOS PLANOS E VENHA FAZER PARTE"/>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-12 mt-12 max-w-[1600px] mx-auto px-4">
-				{partners.map((partner) => (
-					<div key={partner.src} className="flex flex-col items-center">
+				{partners.map((partner, index) => (
+					<div key={partner.src} className="flex flex-col items-center" data-aos="fade-up" data-aos-delay={`${200 + index * 200}`}>
 						<img src={partner.src} alt={partner.alt} className={`${partner.height} w-full object-contain cursor-pointer hover:scale-105 transition-all duration-300`} />
 						{/* <p className="text-white">{partner.level}</p> */}
 					</div>
