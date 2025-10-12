@@ -4,7 +4,7 @@ import SectionCommonHeader from "./SectionCommonHeader";
 export default function ProductsSection() {
 	return (
 		<div className="bg-black text-white pb-24">
-			<SectionCommonHeader text="PRODUTOS" />
+			<SectionCommonHeader text="PRODUTOS" extraText="CONHEÇA OS PRODUTOS EXCLUSIVOS DO FÓRMULA UFMG" widthStyle="md:w-[800px]" />
 
 			<div className="mt-12 max-w-[1400px] mx-auto px-4">
 				{/* Tag “Lançamento” */}

@@ -15,7 +15,6 @@ import sicepotLogo from "./SicepotLogo-SPO.png";
 import terrayamaLogo from "./terrayamaLogo-SPO.webp";
 import dLab from "./tdlab-SPO.jpg";
 import kartodromo from "./kartodromoRBC-SPO.png";
-import cadence from "./cadence-SPO.png";
 import decarbon from "./decarbon-SPO.jpg";
 import kartBetim from "./kartBetim-SPO.png";
 import nce from "./nce-SPO.png";
@@ -62,6 +61,13 @@ import silverPartner from "./silverPartner.svg";
 import goldPartner from "./goldPartner.svg";
 import diamondPartner from "./diamondPartner.svg";
 import cinza from "./cinza.svg";
+import cadence from "./cadence.svg";
+import tecnexus from "./tecnexus.svg";
+import horebWhitePequena from "./horebWhitePequena.svg";
+import mercantil from "./mercantil.svg";
+import greenPlus from "./greenPlus.svg";
+import terrayama from "./terrayama.svg";
+import threedlab from "./3dlab.svg";
 
 export {
 	formulaUfmgLogoAzul,
@@ -81,7 +87,6 @@ export {
 	terrayamaLogo,
 	dLab,
 	kartodromo,
-	cadence,
 	decarbon,
 	kartBetim,
 	nce,
@@ -127,4 +132,11 @@ export {
 	goldPartner,
 	diamondPartner,
 	cinza,
+	cadence,
+	tecnexus,
+	horebWhitePequena,
+	mercantil,
+	greenPlus,
+	terrayama,
+	threedlab,
 }

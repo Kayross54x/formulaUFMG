@@ -13,7 +13,7 @@ interface ImageCarouselProps {
 	className?: string;
 }
 
-export default function ImageCarousel({
+export default function SponsorsCarrousel({
 	images,
 	interval = 5000,
 	height = "h-[400px]",
@@ -22,8 +22,7 @@ export default function ImageCarousel({
 	onClickRightCallBack,
 	onClickLeftCallBack,
 	onSlideChange,
-	slideImageProps,
-	children,
+	slideImageProps
 }: React.PropsWithChildren<ImageCarouselProps>) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const timerRef = useRef<number | null>(null);
@@ -73,24 +72,22 @@ export default function ImageCarousel({
 	}
 
 	return (
-		<div className={`relative w-full ${height} overflow-hidden ${className}`}>
+		<div className={`relative w-full xl:mr-12 ${height} overflow-hidden ${className}`}>
 			{/* Imagens */}
 			{images.map((img, index) => (
 				<div
 					key={index}
-					className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+					className={`absolute inset-0 transition-opacity duration-1000 object-contain ease-in-out ${
 						index === currentIndex ? "opacity-100" : "opacity-0"
 					}`}
 				>
 					<img
 						src={img}
 						alt={`Slide ${index + 1}`}
-						className={`w-full h-full ${findStyle(index)}`}
+						className={`w-[300px] 2xl:w-[290px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${findStyle(index)}`}
 					/>
 				</div>
 			))}
-
-			{children}
 
 			{/* Controles */}
 			<button

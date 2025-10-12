@@ -11,7 +11,7 @@ export default function PartnersSection() {
 
 	return (
 		<div className="bg-black gap-6 h-full pb-16">
-			<SectionCommonHeader text="SÓCIOS" />
+			<SectionCommonHeader text="SÓCIOS" extraText="CONFIRA NOSSOS PLANOS E VENHA FAZER PARTE"/>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-12 mt-12 max-w-[1600px] mx-auto px-4">
 				{partners.map((partner) => (
