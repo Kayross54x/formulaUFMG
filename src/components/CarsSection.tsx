@@ -71,7 +71,7 @@ export default function CarsSection() {
 				images={images}
 				onClickRightCallBack={nextSlide}
 				onClickLeftCallBack={prevSlide}
-				interval={6000}
+				interval={5000}
 				height="min-h-[500px]"
 			>
 				<div className="absolute top-0 left-0 z-40 flex flex-col gap-4 w-full h-full">

@@ -7,6 +7,8 @@ import CarsSection from "../components/CarsSection";
 import CompetitionSection from "../components/CompetitionSection";
 import BannersSection from "../components/BannersSection";
 import NewsLetterSection from "../components/NewsLetterSection";
+import PartnersSection from "../components/PartnersSection";
+import ProductsSection from "../components/ProductsSection";
 
 const images = [fundo1, homeSecondSlide, homeThirdSlide];
 
@@ -85,11 +87,13 @@ export default function Home() {
 
 			<CompetitionSection />
 
+			<PartnersSection />
+
+			<ProductsSection />
+
 			<BannersSection />
 
 			<NewsLetterSection />
-
-
 			{/* <ReactPlayer
 				src={video}
 				width="100%"

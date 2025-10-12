@@ -57,6 +57,11 @@ import phone from "./phone.svg";
 import tiktok from "./tiktok.svg";
 import youtube from "./youtube.svg";
 import podcast from "./podcast.svg";
+import bronzePartner from "./bronzePartner.svg";
+import silverPartner from "./silverPartner.svg";
+import goldPartner from "./goldPartner.svg";
+import diamondPartner from "./diamondPartner.svg";
+import cinza from "./cinza.svg";
 
 export {
 	formulaUfmgLogoAzul,
@@ -117,4 +122,9 @@ export {
 	tiktok,
 	youtube,
 	podcast,
+	bronzePartner,
+	silverPartner,
+	goldPartner,
+	diamondPartner,
+	cinza,
 }

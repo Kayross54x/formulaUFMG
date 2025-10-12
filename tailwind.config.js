@@ -6,6 +6,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'xxs': {'max': '430px'}, // 👈 telas até 430px
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       transitionProperty: {
         'bg-blur': 'background-color, backdrop-filter',
@@ -41,8 +50,8 @@ module.exports = {
           700: '#0003A4',
           800: '#000282',
           900: '#000260',
-        }
-      }
+        },
+      },
     },
   },
   plugins: [

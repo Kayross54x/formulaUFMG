@@ -37,3 +37,4 @@ O site tem como objetivos principais:
 todo:
 
 adicionar data-aos nas coisas da home
+falta os pequenos textos nos headers de cada seção

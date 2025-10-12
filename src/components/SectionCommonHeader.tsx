@@ -2,7 +2,7 @@ import { logoAzul } from "../assets";
 
 export default function SectionCommonHeader({ text, position }: { text: string; position?: "left" | "right" }) {
 	const isRight = position === "right";
-	const skewOuter = isRight ? "skew-x-[12deg]" : "-skew-x-[12deg]";
+	const skewOuter = isRight ? "skew-x-[20deg]" : "-skew-x-[20deg]";
 
 	return (
 		<div className="relative">
@@ -16,7 +16,7 @@ export default function SectionCommonHeader({ text, position }: { text: string; 
 			{/* Conteúdo (sem distorção) */}
 			<div className={`absolute top-0 ${isRight ? "ml-12" : "md:w-[700px]"} flex h-full items-center justify-center gap-x-4`}>
 				<img src={logoAzul} alt="Logo azul" className="h-6" />
-				<p className="text-xl font-bold text-white italic">{text}</p>
+				<p className="text-xl font-bold text-white italic brightness-200">{text}</p>
 			</div>
 		</div>
 	);
