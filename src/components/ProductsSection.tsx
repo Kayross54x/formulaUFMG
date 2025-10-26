@@ -6,7 +6,7 @@ export default function ProductsSection() {
 		<div className="bg-black text-white pb-24">
 			<SectionCommonHeader text="PRODUTOS" extraText="CONHEÇA OS PRODUTOS EXCLUSIVOS DO FÓRMULA UFMG" widthStyle="md:w-[800px]" />
 
-			<div className="mt-12 max-w-[1400px] mx-auto px-4">
+			<div className="mt-12 max-w-[1200px] mx-auto px-4">
 				{/* Tag “Lançamento” */}
 				<div className="py-1 px-8 bg-[#0D00FF] w-fit -skew-x-12 mb-6 -ml-6">
 					<p className="text-white text-lg font-bold skew-x-12">Lançamento</p>
